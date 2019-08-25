@@ -1,0 +1,44 @@
+Ukulele
+
+File structure:
+
+Samples/
+    Common/
+        G/
+            G.wav
+            Ab.wav
+            A.wav
+            ...
+        C/
+            C.wav
+            ...
+        E/
+            E.wav
+            ...
+        A/
+            A.wav
+            ...
+    A unison/
+        G.wav -> symlink to appropriate single note on G string in Common.
+        C.wav -> symlink to appropriate single note on C string in Common.
+        E.wav -> symlink to appropriate single note on E string in Common.
+        A.wav -> symlink to appropriate single note on A string in Common.
+        Strum Up.wav
+        Strum Down.wav
+    A major/
+        G.wav
+        C.wav
+        ...
+    ...
+
+Sample selection:
+
+Path format: /Samples/chord/selection.wav
+
+Where "chord" is the symbol output from the chord object, eg. "A minor 7th", and "selection" is the pressed key, eg. "G" or "Strum Up".
+
+Behaviour:
+
+Pressing G, C, E, A, Strum Up, or Strum Down sends the selection and the current chord to a fixed voice for each selection, which plays back the sample at the path comprised by the chord and selection.
+Pressing Mute switches off all voices and plays Mute.wav independently.
+Pressing a percussion selection plays the appropriate percussion sample.

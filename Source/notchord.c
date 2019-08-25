@@ -1,4 +1,4 @@
-/* ------------------------- chord   ------------------------------------------ */
+/* ------------------------- notchord ----------------------------------------- */
 /*                                                                              */
 /* Tries to detect a chord (or any harmonic relations) of incoming notes.       */
 /* Written by Olaf Matthes (olaf.matthes@gmx.de)                                */
@@ -103,8 +103,7 @@
 
 #define kXX -1
 
-static char *version = "chord v0.2, written by Olaf Matthes <olaf.matthes@gmx.de>";
-// Modified in 2019 by Francois W. Nel for specific use with the Ukulele patch for Organelle.
+static char *version = "notchord v0.1, based on chord v0.2 written by Olaf Matthes <olaf.matthes@gmx.de>, modified in 2019 by Francois W. Nel for specific use with the Ukulele patch for Organelle.";
 
 static char *pitch_class[13] = {"C ", "Db ", "D ", "Eb ", "E ", "F ", "Gb ", "G ", "Ab ", "A ", "Bb ", "B ", "no root "};
 static char name_class[7] = {'C', 'D', 'E', 'F', 'G', 'A', 'B'};
@@ -148,7 +147,7 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs);
 static void chord_default(t_chord *x)
 {
 	// Open strings. TODO: Set up A minor 7th as default note.
-	chord_quartad(x);
+	// chord_quartad(x);
 }
 
 static void chord_unison(t_chord *x)
@@ -2021,7 +2020,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	case kDimMaj11:
 		strcat(chord, "diminished maj 11th");
 		break;
-
 	case kMaj11b5:
 		strcat(chord, "major 11th b5");
 		break;
@@ -2061,7 +2059,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	case kMin7s11:
 		strcat(chord, "minor 7th #11");
 		break;
-
 	case kDom13s11:
 		strcat(chord, "dominant 13th #11");
 		break;
@@ -2142,9 +2139,10 @@ static void chord_chord_finder(t_chord *x, t_int num_pcs)
 	x->x_chord_root = kXX; /* none */
 	switch (num_pcs)
 	{
-	case 0:
-		chord_default(x);
-		break;
+	// case 0:
+	// 	Open strings. TODO: Set up A minor 7th as default note.
+	// 	chord_default(x);
+	// 	break;
 	case 1:
 		chord_unison(x);
 		break;
@@ -2185,7 +2183,8 @@ static void chord_float(t_chord *x, t_floatarg f)
 
 	x->x_pitch = (t_int)f;
 
-	if (x->x_pitch <= x->x_split)
+	// FWN: Check if the note is lower than the specified maximum note. Notes above the maximum are ignored.
+	if (x->x_pitch < x->x_split)
 	{
 		/* first we need to put the note into the allocation table */
 		if (velo == 0) /* got note-off: remove from allocation table */
@@ -2290,14 +2289,14 @@ static void *chord_new(t_floatarg f)
 }
 
 #ifndef MAXLIB
-void chord_setup(void)
+void notchord_setup(void)
 {
-	chord_class = class_new(gensym("chord"), (t_newmethod)chord_new,
+	chord_class = class_new(gensym("notchord"), (t_newmethod)chord_new,
 							0, sizeof(t_chord), 0, A_DEFFLOAT, 0);
 #else
-void maxlib_chord_setup(void)
+void maxlib_notchord_setup(void)
 {
-	chord_class = class_new(gensym("maxlib_chord"), (t_newmethod)chord_new,
+	chord_class = class_new(gensym("maxlib_notchord"), (t_newmethod)chord_new,
 							0, sizeof(t_chord), 0, A_DEFFLOAT, 0);
 #endif
 	class_addfloat(chord_class, chord_float);
@@ -2306,7 +2305,7 @@ void maxlib_chord_setup(void)
 
 	logpost(NULL, 4, version);
 #else
-	class_addcreator((t_newmethod)chord_new, gensym("chord"), A_DEFFLOAT, 0);
+	class_addcreator((t_newmethod)chord_new, gensym("notchord"), A_DEFFLOAT, 0);
 	class_sethelpsymbol(chord_class, gensym("maxlib/chord-help.pd"));
 #endif
 }
