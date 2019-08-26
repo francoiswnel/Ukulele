@@ -130,7 +130,8 @@ typedef struct chord
 	t_int x_alloctable[MAX_POLY]; /* a table used to store all playing notes */
 	t_int x_poly;				  /* number of notes currently playing */
 	t_atom x_chordlist[12];		  /* list that stores the note numbers for output */
-	t_int x_split;				  /* highest note number to process */
+	t_int x_lowerlimit;			  /* FWN: Lowest note number to process (inclusive) */
+	t_int x_upperlimit;			  /* FWN: Highest note number to process (inclusive) */
 
 	t_int x_chord_type;		 /* chord's type (number between 0 and 68) */
 	t_int x_chord_root;		 /* chord's root (pitch class) */
@@ -2183,8 +2184,8 @@ static void chord_float(t_chord *x, t_floatarg f)
 
 	x->x_pitch = (t_int)f;
 
-	// FWN: Check if the note is lower than the specified maximum note. Notes above the maximum are ignored.
-	if (x->x_pitch < x->x_split)
+	// FWN: Check if the note is within the specified note range (inclusive). Notes outside of the range are ignored.
+	if (x->x_pitch >= x->x_lowerlimit && x->x_pitch <= x->x_upperlimit)
 	{
 		/* first we need to put the note into the allocation table */
 		if (velo == 0) /* got note-off: remove from allocation table */
@@ -2268,9 +2269,8 @@ static void chord_ft1(t_chord *x, t_floatarg f)
 
 static t_class *chord_class;
 
-static void *chord_new(t_floatarg f)
+static void *chord_new(t_floatarg f1, t_floatarg f2)
 {
-	int i;
 	t_chord *x = (t_chord *)pd_new(chord_class);
 	inlet_new(&x->x_ob, &x->x_ob.ob_pd, gensym("float"), gensym("ft1"));
 	x->x_outchordval = outlet_new(&x->x_ob, gensym("float"));
@@ -2279,33 +2279,22 @@ static void *chord_new(t_floatarg f)
 	x->x_outchordinversion = outlet_new(&x->x_ob, gensym("float"));
 	x->x_outchordnotes = outlet_new(&x->x_ob, gensym("float"));
 
-	x->x_split = (t_int)f;
-	if (x->x_split == 0)
-		x->x_split = 128;
-	for (i = 0; i < MAX_POLY; i++)
+	x->x_lowerlimit = (t_int)f1;
+	x->x_upperlimit = (t_int)f2;
+
+	if (x->x_upperlimit == 0)
+		x->x_upperlimit = 128;
+
+	for (int i = 0; i < MAX_POLY; i++)
 		x->x_alloctable[i] = -1;
 
 	return (void *)x;
 }
 
-#ifndef MAXLIB
 void notchord_setup(void)
 {
 	chord_class = class_new(gensym("notchord"), (t_newmethod)chord_new,
-							0, sizeof(t_chord), 0, A_DEFFLOAT, 0);
-#else
-void maxlib_notchord_setup(void)
-{
-	chord_class = class_new(gensym("maxlib_notchord"), (t_newmethod)chord_new,
-							0, sizeof(t_chord), 0, A_DEFFLOAT, 0);
-#endif
+							0, sizeof(t_chord), 0, A_DEFFLOAT, A_DEFFLOAT, 0);
 	class_addfloat(chord_class, chord_float);
 	class_addmethod(chord_class, (t_method)chord_ft1, gensym("ft1"), A_FLOAT, 0);
-#ifndef MAXLIB
-
-	logpost(NULL, 4, version);
-#else
-	class_addcreator((t_newmethod)chord_new, gensym("notchord"), A_DEFFLOAT, 0);
-	class_sethelpsymbol(chord_class, gensym("maxlib/chord-help.pd"));
-#endif
 }

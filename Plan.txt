@@ -1,5 +1,18 @@
 Ukulele
 
+TODO:
+
+* Modify chord symbol to only include chord (no note values).
+* Add default note argument to notchord.
+* Modify notchord to output default chord when no notes are pressed.
+* Output only necessary values.
+* Add method to map selection to filename.
+* Combine notchord output and filename to get path to sample.
+* Configure voices to play note and chord samples.
+* Add mute method.
+* Add percussion voices.
+* Sample notes and chords.
+
 File structure:
 
 Samples/
