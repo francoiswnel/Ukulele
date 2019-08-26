@@ -1728,110 +1728,6 @@ static int chord_name_thirteenth(t_chord *x, char *chord, int c, int rootName)
 	return c;
 }
 
-static void chord_spell_chord(t_chord *x, char *chord, t_int num_pcs)
-{
-	int rootName = 0; // keep index of root name class
-	int c = 0;		  // pointer to current character
-	int named = 0;	// how many members have been named
-	int mark;
-	int i;
-
-	// use chordRoot to set rootName index and store characters for name
-	switch (x->x_chord_root)
-	{
-	case 0:
-		chord[c++] = name_class[rootName = 0];
-		break;
-	case 1:
-		chord[c++] = name_class[rootName = 1];
-		chord[c++] = 'b';
-		break;
-	case 2:
-		chord[c++] = name_class[rootName = 1];
-		break;
-	case 3:
-		chord[c++] = name_class[rootName = 2];
-		chord[c++] = 'b';
-		break;
-	case 4:
-		chord[c++] = name_class[rootName = 2];
-		break;
-	case 5:
-		chord[c++] = name_class[rootName = 3];
-		break;
-	case 6:
-		chord[c++] = name_class[rootName = 4];
-		chord[c++] = 'b';
-		break;
-	case 7:
-		chord[c++] = name_class[rootName = 4];
-		break;
-	case 8:
-		chord[c++] = name_class[rootName = 5];
-		chord[c++] = 'b';
-		break;
-	case 9:
-		chord[c++] = name_class[rootName = 5];
-		break;
-	case 10:
-		chord[c++] = name_class[rootName = 6];
-		chord[c++] = 'b';
-		break;
-	case 11:
-		chord[c++] = name_class[rootName = 6];
-		break;
-	default:
-		break;
-	}
-	x->x_pc[x->x_chord_root] = 0; /* set this member to zero */
-
-	chord[c++] = ' '; // insert space
-	if (++named == num_pcs)
-	{					 // if everything is named
-		chord[c] = '\0'; // terminate the string
-		return;			 // and return
-	}
-
-	mark = c; // use mark to see if new names are added
-	for (i = 0; i < 6; i++)
-	{
-		// advance search by thirds
-		switch (i)
-		{
-		case 0:
-			mark = chord_name_third(x, chord, c, rootName);
-			break;
-		case 1:
-			mark = chord_name_fifth(x, chord, c, rootName);
-			break;
-		case 2:
-			mark = chord_name_seventh(x, chord, c, rootName);
-			break;
-		case 3:
-			mark = chord_name_ninth(x, chord, c, rootName);
-			break;
-		case 4:
-			mark = chord_name_eleventh(x, chord, c, rootName);
-			break;
-		case 5:
-			mark = chord_name_thirteenth(x, chord, c, rootName);
-			break;
-		}
-		if (mark != c)
-		{			  // if new name is added
-			++named;  // increment count of named members
-			c = mark; // update character pointer
-		}
-		if (named == num_pcs)
-		{					 // if everything is named
-			chord[c] = '\0'; // terminate the string
-			return;			 // and return
-		}
-	}
-
-	chord[c] = '\0';
-}
-
 static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 {
 	char chord[255]; /* output string */
@@ -1848,21 +1744,9 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 		}
 	}
 
-	if (x->x_chord_type != kNone)
-	{
-		chord_spell_chord(x, chord, num_pcs); /* spell chord members */
-	}
-	else
-	{
-		post("going...");
-		chord[0] = '\0';
-		for (i = 0; i < 12; i++)
-			if (x->x_pc[i])
-				strcat(chord, pitch_class[i]); /* output single notes */
-		post("did it");
-	}
+	// if (x->x_chord_type == kNone) output default chord.
 
-	strcat(chord, ": ");
+	chord[0] = '\0';
 	strcat(chord, pitch_class[x->x_chord_root]);
 
 	/* append name of chord type */
@@ -1883,7 +1767,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	case kAug:
 		strcat(chord, "augmented");
 		break;
-
 	case kMaj7:
 		strcat(chord, "major 7th");
 		break;
@@ -1902,7 +1785,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	case kMinMaj7:
 		strcat(chord, "minor/major 7th");
 		break;
-
 	case kMaj7s5:
 		strcat(chord, "major 7th #5");
 		break;
@@ -1918,7 +1800,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	case kDomb9:
 		strcat(chord, "dominant b9");
 		break;
-
 	case kMaj9:
 		strcat(chord, "major 9th");
 		break;
@@ -1952,7 +1833,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	case kmM9b11:
 		strcat(chord, "minor/maj 9th b11");
 		break;
-
 	case kMaj7b9:
 		strcat(chord, "major 7th b9");
 		break;
@@ -1980,7 +1860,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	case kDimMajb9:
 		strcat(chord, "diminished M7 b9");
 		break;
-
 	case kMaj7s9:
 		strcat(chord, "major 7th #9");
 		break;
@@ -1999,7 +1878,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	case kHDimb11:
 		strcat(chord, "half diminished b11");
 		break;
-
 	case kMaj11:
 		strcat(chord, "major 11th");
 		break;
