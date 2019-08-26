@@ -100,6 +100,7 @@
 #define kDom7b13 66
 #define kChrom 67
 #define kNone 68
+#define kDefault 69
 
 #define kXX -1
 
@@ -117,6 +118,10 @@ typedef struct
 typedef struct chord
 {
 	t_object x_ob;
+
+	t_inlet *x_invelo;		   /* inlet for velocity */
+	t_inlet *x_indefaultchord; /* inlet for default chord */
+
 	t_outlet *x_outchordval;	   /* chord as MIDI note number of base note */
 	t_outlet *x_outchordclass;	 /* class of chord's bass note */
 	t_outlet *x_outchordname;	  /* chord name, e.g. "Cmajor7" */
@@ -130,8 +135,9 @@ typedef struct chord
 	t_int x_alloctable[MAX_POLY]; /* a table used to store all playing notes */
 	t_int x_poly;				  /* number of notes currently playing */
 	t_atom x_chordlist[12];		  /* list that stores the note numbers for output */
-	t_int x_lowerlimit;			  /* FWN: Lowest note number to process (inclusive) */
-	t_int x_upperlimit;			  /* FWN: Highest note number to process (inclusive) */
+	t_int x_lowerlimit;			  /* FWN: Lowest note number to process (inclusive). */
+	t_int x_upperlimit;			  /* FWN: Highest note number to process (inclusive). */
+	t_symbol *x_defaultchord;	 /* FWN: The default chord to output if no notes are pressed. */
 
 	t_int x_chord_type;		 /* chord's type (number between 0 and 68) */
 	t_int x_chord_root;		 /* chord's root (pitch class) */
@@ -147,8 +153,8 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs);
 
 static void chord_default(t_chord *x)
 {
-	// Open strings. TODO: Set up A minor 7th as default note.
-	// chord_quartad(x);
+	x->x_chord_type = kDefault;
+	chord_draw_chord_type(x, 0); // output onto the screen
 }
 
 static void chord_unison(t_chord *x)
@@ -1744,222 +1750,229 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 		}
 	}
 
-	// if (x->x_chord_type == kNone) output default chord.
-
-	chord[0] = '\0';
-	strcat(chord, pitch_class[x->x_chord_root]);
-
-	/* append name of chord type */
-	switch (x->x_chord_type)
+	if (x->x_chord_type == kDefault)
 	{
-	case kUnison:
-		strcat(chord, "unison");
-		break;
-	case kMaj:
-		strcat(chord, "major");
-		break;
-	case kMin:
-		strcat(chord, "minor");
-		break;
-	case kDim:
-		strcat(chord, "diminished");
-		break;
-	case kAug:
-		strcat(chord, "augmented");
-		break;
-	case kMaj7:
-		strcat(chord, "major 7th");
-		break;
-	case kDom7:
-		strcat(chord, "dominant 7th");
-		break;
-	case kMin7:
-		strcat(chord, "minor 7th");
-		break;
-	case kHalfDim7:
-		strcat(chord, "half diminished 7th");
-		break;
-	case kDim7:
-		strcat(chord, "diminished 7th");
-		break;
-	case kMinMaj7:
-		strcat(chord, "minor/major 7th");
-		break;
-	case kMaj7s5:
-		strcat(chord, "major 7th #5");
-		break;
-	case kMaj7b5:
-		strcat(chord, "major 7th b5");
-		break;
-	case kDom7s5:
-		strcat(chord, "dominant 7th #5");
-		break;
-	case kDom7b5:
-		strcat(chord, "dominant 7th b5");
-		break;
-	case kDomb9:
-		strcat(chord, "dominant b9");
-		break;
-	case kMaj9:
-		strcat(chord, "major 9th");
-		break;
-	case kDom9:
-		strcat(chord, "dominant 9th");
-		break;
-	case kMin9:
-		strcat(chord, "minor 9th");
-		break;
-	case kHalfDim9:
-		strcat(chord, "half diminished 9th");
-		break;
-	case kMinMaj9:
-		strcat(chord, "minor major 9th");
-		break;
-	case kDimMaj9:
-		strcat(chord, "diminished major 9th");
-		break;
-	case kMaj9b5:
-		strcat(chord, "major 9th b5");
-		break;
-	case kDom9b5:
-		strcat(chord, "dominant 9th b5");
-		break;
-	case kDom9b13:
-		strcat(chord, "dominant 9th b13");
-		break;
-	case kMin9s11:
-		strcat(chord, "minor 9th #11");
-		break;
-	case kmM9b11:
-		strcat(chord, "minor/maj 9th b11");
-		break;
-	case kMaj7b9:
-		strcat(chord, "major 7th b9");
-		break;
-	case kMaj7s5b9:
-		strcat(chord, "major 7th #5 b9");
-		break;
-	case kDom7b9:
-		strcat(chord, "dominant 7th b9");
-		break;
-	case kMin7b9:
-		strcat(chord, "minor 7th b9");
-		break;
-	case kMinb9s11:
-		strcat(chord, "minor b9 #11");
-		break;
-	case kHalfDimb9:
-		strcat(chord, "half diminished b9");
-		break;
-	case kDim7b9:
-		strcat(chord, "diminished b9");
-		break;
-	case kMinMajb9:
-		strcat(chord, "minor/major b9");
-		break;
-	case kDimMajb9:
-		strcat(chord, "diminished M7 b9");
-		break;
-	case kMaj7s9:
-		strcat(chord, "major 7th #9");
-		break;
-	case kDom7s9:
-		strcat(chord, "dominant #9");
-		break;
-	case kMaj7s11:
-		strcat(chord, "major 7th #11");
-		break;
-	case kMaj9s13:
-		strcat(chord, "major 9th #13");
-		break;
-	case kMs9s11:
-		strcat(chord, "major #9 #11");
-		break;
-	case kHDimb11:
-		strcat(chord, "half diminished b11");
-		break;
-	case kMaj11:
-		strcat(chord, "major 11th");
-		break;
-	case kDom11:
-		strcat(chord, "dominant 11th");
-		break;
-	case kMin11:
-		strcat(chord, "minor 11th");
-		break;
-	case kHalfDim11:
-		strcat(chord, "half diminished 11th");
-		break;
-	case kDim11:
-		strcat(chord, "diminished 11th");
-		break;
-	case kMinMaj11:
-		strcat(chord, "minor/major 11th");
-		break;
-	case kDimMaj11:
-		strcat(chord, "diminished maj 11th");
-		break;
-	case kMaj11b5:
-		strcat(chord, "major 11th b5");
-		break;
-	case kMaj11s5:
-		strcat(chord, "major 11th #5");
-		break;
-	case kMaj11b9:
-		strcat(chord, "major 11th b9");
-		break;
-	case kMaj11s9:
-		strcat(chord, "major 11th #9");
-		break;
-	case kMaj11b13:
-		strcat(chord, "major 11th b13");
-		break;
-	case kMaj11s13:
-		strcat(chord, "major 11th #13");
-		break;
-	case kM11b5b9:
-		strcat(chord, "major 11th b5 b9");
-		break;
-	case kDom11b5:
-		strcat(chord, "dominant 11th b5");
-		break;
-	case kDom11b9:
-		strcat(chord, "dominant 11th b9");
-		break;
-	case kDom11s9:
-		strcat(chord, "dominant 11th #9");
-		break;
-	case kHalfDim11b9:
-		strcat(chord, "half dim 11th b9");
-		break;
-	case kDom7s11:
-		strcat(chord, "dominant #11");
-		break;
-	case kMin7s11:
-		strcat(chord, "minor 7th #11");
-		break;
-	case kDom13s11:
-		strcat(chord, "dominant 13th #11");
-		break;
-	case kM7b913:
-		strcat(chord, "major 7 b9 13");
-		break;
-	case kMaj7s13:
-		strcat(chord, "major 7th #13");
-		break;
-	case kM7b9s13:
-		strcat(chord, "major 7 b9 #13");
-		break;
-	case kDom7b13:
-		strcat(chord, "dominant 7th b13");
-		break;
-	case kChrom:
-		strcat(chord, "chromatic");
-		break;
-	case kNone:
-	default:
-		strcat(chord, "unknown");
-		break;
+		outlet_symbol(x->x_outchordname, x->x_defaultchord);
+	}
+	else
+	{
+		chord[0] = '\0';
+		strcat(chord, pitch_class[x->x_chord_root]);
+
+		/* append name of chord type */
+		switch (x->x_chord_type)
+		{
+		case kUnison:
+			strcat(chord, "unison");
+			break;
+		case kMaj:
+			strcat(chord, "major");
+			break;
+		case kMin:
+			strcat(chord, "minor");
+			break;
+		case kDim:
+			strcat(chord, "diminished");
+			break;
+		case kAug:
+			strcat(chord, "augmented");
+			break;
+		case kMaj7:
+			strcat(chord, "major 7th");
+			break;
+		case kDom7:
+			strcat(chord, "dominant 7th");
+			break;
+		case kMin7:
+			strcat(chord, "minor 7th");
+			break;
+		case kHalfDim7:
+			strcat(chord, "half diminished 7th");
+			break;
+		case kDim7:
+			strcat(chord, "diminished 7th");
+			break;
+		case kMinMaj7:
+			strcat(chord, "minor/major 7th");
+			break;
+		case kMaj7s5:
+			strcat(chord, "major 7th #5");
+			break;
+		case kMaj7b5:
+			strcat(chord, "major 7th b5");
+			break;
+		case kDom7s5:
+			strcat(chord, "dominant 7th #5");
+			break;
+		case kDom7b5:
+			strcat(chord, "dominant 7th b5");
+			break;
+		case kDomb9:
+			strcat(chord, "dominant b9");
+			break;
+		case kMaj9:
+			strcat(chord, "major 9th");
+			break;
+		case kDom9:
+			strcat(chord, "dominant 9th");
+			break;
+		case kMin9:
+			strcat(chord, "minor 9th");
+			break;
+		case kHalfDim9:
+			strcat(chord, "half diminished 9th");
+			break;
+		case kMinMaj9:
+			strcat(chord, "minor major 9th");
+			break;
+		case kDimMaj9:
+			strcat(chord, "diminished major 9th");
+			break;
+		case kMaj9b5:
+			strcat(chord, "major 9th b5");
+			break;
+		case kDom9b5:
+			strcat(chord, "dominant 9th b5");
+			break;
+		case kDom9b13:
+			strcat(chord, "dominant 9th b13");
+			break;
+		case kMin9s11:
+			strcat(chord, "minor 9th #11");
+			break;
+		case kmM9b11:
+			strcat(chord, "minor/maj 9th b11");
+			break;
+		case kMaj7b9:
+			strcat(chord, "major 7th b9");
+			break;
+		case kMaj7s5b9:
+			strcat(chord, "major 7th #5 b9");
+			break;
+		case kDom7b9:
+			strcat(chord, "dominant 7th b9");
+			break;
+		case kMin7b9:
+			strcat(chord, "minor 7th b9");
+			break;
+		case kMinb9s11:
+			strcat(chord, "minor b9 #11");
+			break;
+		case kHalfDimb9:
+			strcat(chord, "half diminished b9");
+			break;
+		case kDim7b9:
+			strcat(chord, "diminished b9");
+			break;
+		case kMinMajb9:
+			strcat(chord, "minor/major b9");
+			break;
+		case kDimMajb9:
+			strcat(chord, "diminished M7 b9");
+			break;
+		case kMaj7s9:
+			strcat(chord, "major 7th #9");
+			break;
+		case kDom7s9:
+			strcat(chord, "dominant #9");
+			break;
+		case kMaj7s11:
+			strcat(chord, "major 7th #11");
+			break;
+		case kMaj9s13:
+			strcat(chord, "major 9th #13");
+			break;
+		case kMs9s11:
+			strcat(chord, "major #9 #11");
+			break;
+		case kHDimb11:
+			strcat(chord, "half diminished b11");
+			break;
+		case kMaj11:
+			strcat(chord, "major 11th");
+			break;
+		case kDom11:
+			strcat(chord, "dominant 11th");
+			break;
+		case kMin11:
+			strcat(chord, "minor 11th");
+			break;
+		case kHalfDim11:
+			strcat(chord, "half diminished 11th");
+			break;
+		case kDim11:
+			strcat(chord, "diminished 11th");
+			break;
+		case kMinMaj11:
+			strcat(chord, "minor/major 11th");
+			break;
+		case kDimMaj11:
+			strcat(chord, "diminished maj 11th");
+			break;
+		case kMaj11b5:
+			strcat(chord, "major 11th b5");
+			break;
+		case kMaj11s5:
+			strcat(chord, "major 11th #5");
+			break;
+		case kMaj11b9:
+			strcat(chord, "major 11th b9");
+			break;
+		case kMaj11s9:
+			strcat(chord, "major 11th #9");
+			break;
+		case kMaj11b13:
+			strcat(chord, "major 11th b13");
+			break;
+		case kMaj11s13:
+			strcat(chord, "major 11th #13");
+			break;
+		case kM11b5b9:
+			strcat(chord, "major 11th b5 b9");
+			break;
+		case kDom11b5:
+			strcat(chord, "dominant 11th b5");
+			break;
+		case kDom11b9:
+			strcat(chord, "dominant 11th b9");
+			break;
+		case kDom11s9:
+			strcat(chord, "dominant 11th #9");
+			break;
+		case kHalfDim11b9:
+			strcat(chord, "half dim 11th b9");
+			break;
+		case kDom7s11:
+			strcat(chord, "dominant #11");
+			break;
+		case kMin7s11:
+			strcat(chord, "minor 7th #11");
+			break;
+		case kDom13s11:
+			strcat(chord, "dominant 13th #11");
+			break;
+		case kM7b913:
+			strcat(chord, "major 7 b9 13");
+			break;
+		case kMaj7s13:
+			strcat(chord, "major 7th #13");
+			break;
+		case kM7b9s13:
+			strcat(chord, "major 7 b9 #13");
+			break;
+		case kDom7b13:
+			strcat(chord, "dominant 7th b13");
+			break;
+		case kChrom:
+			strcat(chord, "chromatic");
+			break;
+		case kNone:
+		default:
+			strcat(chord, "unknown");
+			break;
+		}
+
+		outlet_symbol(x->x_outchordname, gensym(chord));
 	}
 
 	x->x_chord_bass = x->x_abs_pc[x->x_chord_root]; /* get MIDI note number of bass */
@@ -1967,7 +1980,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 	/* output results */
 	outlet_list(x->x_outchordnotes, NULL, j, x->x_chordlist);
 	outlet_float(x->x_outchordinversion, x->x_chord_inversion);
-	outlet_symbol(x->x_outchordname, gensym(chord));
 	outlet_float(x->x_outchordclass, x->x_chord_root);
 	outlet_float(x->x_outchordval, x->x_chord_bass);
 }
@@ -2018,10 +2030,9 @@ static void chord_chord_finder(t_chord *x, t_int num_pcs)
 	x->x_chord_root = kXX; /* none */
 	switch (num_pcs)
 	{
-	// case 0:
-	// 	Open strings. TODO: Set up A minor 7th as default note.
-	// 	chord_default(x);
-	// 	break;
+	case 0:
+		chord_default(x);
+		break;
 	case 1:
 		chord_unison(x);
 		break;
@@ -2150,7 +2161,10 @@ static t_class *chord_class;
 static void *chord_new(t_floatarg f1, t_floatarg f2)
 {
 	t_chord *x = (t_chord *)pd_new(chord_class);
-	inlet_new(&x->x_ob, &x->x_ob.ob_pd, gensym("float"), gensym("ft1"));
+
+	x->x_invelo = inlet_new(&x->x_ob, &x->x_ob.ob_pd, gensym("float"), gensym("ft1"));
+	x->x_indefaultchord = symbolinlet_new(&x->x_ob, &x->x_defaultchord);
+
 	x->x_outchordval = outlet_new(&x->x_ob, gensym("float"));
 	x->x_outchordclass = outlet_new(&x->x_ob, gensym("float"));
 	x->x_outchordname = outlet_new(&x->x_ob, gensym("symbol"));
@@ -2171,8 +2185,7 @@ static void *chord_new(t_floatarg f1, t_floatarg f2)
 
 void notchord_setup(void)
 {
-	chord_class = class_new(gensym("notchord"), (t_newmethod)chord_new,
-							0, sizeof(t_chord), 0, A_DEFFLOAT, A_DEFFLOAT, 0);
+	chord_class = class_new(gensym("notchord"), (t_newmethod)chord_new, 0, sizeof(t_chord), 0, A_DEFFLOAT, A_DEFFLOAT, 0);
 	class_addfloat(chord_class, chord_float);
 	class_addmethod(chord_class, (t_method)chord_ft1, gensym("ft1"), A_FLOAT, 0);
 }
