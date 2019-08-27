@@ -104,10 +104,12 @@
 
 #define kXX -1
 
-static char *version = "notchord v0.1, based on chord v0.2 written by Olaf Matthes <olaf.matthes@gmx.de>, modified in 2019 by Francois W. Nel for specific use with the Ukulele patch for Organelle.";
+/* Version: notchord v0.1
+ * Based on chord v0.2 written by Olaf Matthes <olaf.matthes@gmx.de>.
+ * Modified in 2019 by Francois W. Nel for specific use with the Ukulele patch for Organelle. 
+ */
 
 static char *pitch_class[13] = {"C ", "Db ", "D ", "Eb ", "E ", "F ", "Gb ", "G ", "Ab ", "A ", "Bb ", "B ", "no root "};
-static char name_class[7] = {'C', 'D', 'E', 'F', 'G', 'A', 'B'};
 
 typedef struct
 {
@@ -144,12 +146,12 @@ typedef struct chord
 /* functions */
 static void chord_kick_out_member(t_chord *x, t_int number, t_int *members);
 static void chord_chord_finder(t_chord *x, t_int num_pcs);
-static void chord_draw_chord_type(t_chord *x, t_int num_pcs);
+static void chord_draw_chord_type(t_chord *x);
 
 static void chord_default(t_chord *x)
 {
 	x->x_chord_type = kDefault;
-	chord_draw_chord_type(x, 0); // output onto the screen
+	chord_draw_chord_type(x); // output onto the screen
 }
 
 static void chord_unison(t_chord *x)
@@ -164,7 +166,7 @@ static void chord_unison(t_chord *x)
 		}
 	x->x_chord_type = 0;
 	x->x_chord_root = member;
-	chord_draw_chord_type(x, 1); // output onto the screen
+	chord_draw_chord_type(x); // output onto the screen
 }
 
 static void chord_dyad(t_chord *x)
@@ -189,7 +191,7 @@ static void chord_dyad(t_chord *x)
 	else
 		x->x_chord_root = members[t->rootMember];
 	x->x_chord_inversion = t->rootMember; /* get state of inversion */
-	chord_draw_chord_type(x, 2);		  /* output results */
+	chord_draw_chord_type(x);			  /* output results */
 }
 
 static void chord_triad(t_chord *x)
@@ -242,7 +244,7 @@ static void chord_triad(t_chord *x)
 	case 2:
 		x->x_chord_inversion = 1;
 	}
-	chord_draw_chord_type(x, 3); /* output onto the screen */
+	chord_draw_chord_type(x); /* output onto the screen */
 }
 
 static void chord_quartad(t_chord *x)
@@ -502,7 +504,7 @@ static void chord_quartad(t_chord *x)
 	case 3:
 		x->x_chord_inversion = 1;
 	}
-	chord_draw_chord_type(x, 4); /* output results */
+	chord_draw_chord_type(x); /* output results */
 }
 
 static void chord_fatal_error(char *s1, char *s2)
@@ -1157,7 +1159,7 @@ static void chord_quintad(t_chord *x)
 		case 4:
 			x->x_chord_inversion = 1;
 		}
-		chord_draw_chord_type(x, 5); /* output result */
+		chord_draw_chord_type(x); /* output result */
 	}
 	else
 		chord_kick_out_member(x, 5, members);
@@ -1426,310 +1428,13 @@ static void chord_sextad(t_chord *x)
 		case 5:
 			x->x_chord_inversion = 1;
 		}
-		chord_draw_chord_type(x, 6); // output onto the screen
+		chord_draw_chord_type(x); // output onto the screen
 	}
 	else
 		chord_kick_out_member(x, 6, members);
 }
 
-static int chord_accidental(t_int pc)
-{
-	switch (pc)
-	{
-	case 0:
-	case 2:
-	case 4:
-	case 5:
-	case 7:
-	case 9:
-	case 11:
-		return 0;
-	case 1:
-	case 3:
-	case 6:
-	case 8:
-	case 10:
-	default:
-		return 1;
-	}
-}
-
-static int chord_name_third(t_chord *x, char *chord, int c, int rootName)
-{
-	int third = (x->x_chord_root + 4) % 12; // look for major third
-	if (x->x_pc[third])
-	{						// if one is there
-		x->x_pc[third] = 0; // erase from pcs array
-		chord[c++] = name_class[(rootName + 2) % 7];
-		if (chord_accidental(third))
-		{ // if it has an chord_accidental
-			// make it a flat if the root also has an chord_accidental
-			if (chord_accidental(x->x_chord_root))
-				chord[c++] = 'b';
-			// otherwise make it a sharp
-			else
-				chord[c++] = '#';
-		}
-		chord[c++] = ' ';
-		return c; // return if major third found
-	}
-
-	third = (x->x_chord_root + 3) % 12; // no major, look for minor third
-	if (x->x_pc[third])
-	{						// if one is there
-		x->x_pc[third] = 0; // erase from pcs array
-		chord[c++] = name_class[(rootName + 2) % 7];
-		if (chord_accidental(third)) // if it has an chord_accidental
-			chord[c++] = 'b';
-		else // make it a flat
-			if (chord_accidental(x->x_chord_root))
-		{						  // if the root has an chord_accidental
-			chord[c++] = 'b';	 // make the third a flat
-			if (chord[0] == 'G')  // if the root is Gb
-				chord[c++] = 'b'; // this must be Bbb
-		}
-		chord[c++] = ' ';
-		return c;
-	}
-
-	return c; // if we get here there was no third
-}
-
-static int chord_name_fifth(t_chord *x, char *chord, int c, int rootName)
-{
-	int fifth = (x->x_chord_root + 7) % 12;
-	if (x->x_pc[fifth])
-	{
-		x->x_pc[fifth] = 0;
-		chord[c++] = name_class[(rootName + 4) % 7];
-		if (chord_accidental(fifth))
-		{
-			if (chord_accidental(x->x_chord_root))
-				chord[c++] = 'b';
-			else
-				chord[c++] = '#';
-		}
-		chord[c++] = ' ';
-		return c;
-	}
-
-	fifth = (x->x_chord_root + 6) % 12;
-	if (x->x_pc[fifth])
-	{
-		x->x_pc[fifth] = 0;
-		chord[c++] = name_class[(rootName + 4) % 7];
-		if (chord[0] != 'B')
-			chord[c++] = 'b';
-		if (chord_accidental(x->x_chord_root))
-			chord[c++] = 'b';
-		chord[c++] = ' ';
-		return c;
-	}
-
-	fifth = (x->x_chord_root + 8) % 12;
-	if (x->x_pc[fifth])
-	{
-		x->x_pc[fifth] = 0;
-		chord[c++] = name_class[(rootName + 4) % 7];
-		if (chord_accidental(fifth))
-			chord[c++] = '#';
-		else if (!chord_accidental(x->x_chord_root))
-		{
-			chord[c++] = '#';
-			if (chord[0] == 'B')
-				chord[c++] = '#';
-		}
-		chord[c++] = ' ';
-		return c;
-	}
-
-	return c;
-}
-
-static int chord_name_seventh(t_chord *x, char *chord, int c, int rootName)
-{
-	int seventh = (x->x_chord_root + 11) % 12;
-	if (x->x_pc[seventh])
-	{
-		x->x_pc[seventh] = 0;
-		chord[c++] = name_class[(rootName + 6) % 7];
-		if (chord_accidental(seventh))
-			chord[c++] = '#';
-		chord[c++] = ' ';
-		return c;
-	}
-	seventh = (x->x_chord_root + 10) % 12;
-	if (x->x_pc[seventh])
-	{
-		x->x_pc[seventh] = 0;
-		chord[c++] = name_class[(rootName + 6) % 7];
-		if (chord_accidental(seventh) || chord_accidental(x->x_chord_root))
-			chord[c++] = 'b';
-		chord[c++] = ' ';
-		return c;
-	}
-	seventh = (x->x_chord_root + 9) % 12;
-	if (x->x_pc[seventh])
-	{
-		x->x_pc[seventh] = 0;
-		chord[c++] = name_class[(rootName + 6) % 7];
-		chord[c++] = 'b';
-		if (chord_accidental(x->x_chord_root))
-			chord[c++] = 'b';
-		else if (chord_accidental((seventh + 1) % 12))
-			chord[c++] = 'b';
-		chord[c++] = ' ';
-		return c;
-	}
-	return c;
-}
-
-static int chord_name_ninth(t_chord *x, char *chord, int c, int rootName)
-{
-	int ninth = (x->x_chord_root + 2) % 12;
-	if (x->x_pc[ninth])
-	{
-		x->x_pc[ninth] = 0;
-		chord[c++] = name_class[(rootName + 1) % 7];
-		if (chord_accidental(ninth))
-		{
-			if (chord_accidental(x->x_chord_root))
-				chord[c++] = 'b';
-			else
-				chord[c++] = '#';
-		}
-		chord[c++] = ' ';
-		return c;
-	}
-
-	ninth = (x->x_chord_root + 1) % 12;
-	if (x->x_pc[ninth])
-	{
-		x->x_pc[ninth] = 0;
-		chord[c++] = name_class[(rootName + 1) % 7];
-		if (chord_accidental(ninth))
-			chord[c++] = 'b';
-		else
-		{
-			if (chord_accidental(x->x_chord_root))
-			{
-				chord[c++] = 'b';
-				if ((x->x_chord_root == 1) || (x->x_chord_root == 6) || (x->x_chord_root == 8))
-					chord[c++] = 'b';
-			}
-		}
-		chord[c++] = ' ';
-		return c;
-	}
-
-	ninth = (x->x_chord_root + 3) % 12;
-	if (x->x_pc[ninth])
-	{
-		x->x_pc[ninth] = 0;
-		chord[c++] = name_class[(rootName + 1) % 7];
-		if (chord_accidental(ninth))
-			chord[c++] = '#';
-		else if (!chord_accidental(x->x_chord_root))
-		{
-			chord[c++] = '#';
-			if (chord_accidental((x->x_chord_root + 2) % 12))
-				chord[c++] = '#';
-		}
-		chord[c++] = ' ';
-		return c;
-	}
-
-	return c;
-}
-
-static int chord_name_eleventh(t_chord *x, char *chord, int c, int rootName)
-{
-	int eleventh = (x->x_chord_root + 5) % 12;
-	if (x->x_pc[eleventh])
-	{
-		x->x_pc[eleventh] = 0;
-		chord[c++] = name_class[(rootName + 3) % 7];
-		if (chord_accidental(eleventh))
-			chord[c++] = 'b';
-		else if (chord_accidental(x->x_chord_root))
-			chord[c++] = 'b';
-		chord[c++] = ' ';
-		return c;
-	}
-
-	eleventh = (x->x_chord_root + 6) % 12;
-	if (x->x_pc[eleventh])
-	{
-		x->x_pc[eleventh] = 0;
-		chord[c++] = name_class[(rootName + 3) % 7];
-		if (chord_accidental(eleventh))
-			chord[c++] = '#';
-		else if ((!chord_accidental(x->x_chord_root)) && (x->x_chord_root == 11))
-			chord[c++] = '#';
-		chord[c++] = ' ';
-		return c;
-	}
-
-	return c;
-}
-
-static int chord_name_thirteenth(t_chord *x, char *chord, int c, int rootName)
-{
-	int thirteenth = (x->x_chord_root + 9) % 12;
-	if (x->x_pc[thirteenth])
-	{
-		x->x_pc[thirteenth] = 0;
-		chord[c++] = name_class[(rootName + 5) % 7];
-		if (chord_accidental(thirteenth))
-		{
-			if (chord_accidental(x->x_chord_root))
-				chord[c++] = 'b';
-			else
-				chord[c++] = '#';
-		}
-
-		chord[c++] = ' ';
-		return c;
-	}
-
-	thirteenth = (x->x_chord_root + 10) % 12;
-	if (x->x_pc[thirteenth])
-	{
-		x->x_pc[thirteenth] = 0;
-		chord[c++] = name_class[(rootName + 5) % 7];
-		if (chord_accidental(thirteenth))
-			chord[c++] = '#';
-		else if (!chord_accidental(x->x_chord_root))
-		{
-			chord[c++] = '#';
-			if (chord_accidental((x->x_chord_root + 9) % 12))
-				chord[c++] = '#';
-		}
-		chord[c++] = ' ';
-		return c;
-	}
-
-	thirteenth = (x->x_chord_root + 8) % 12;
-	if (x->x_pc[thirteenth])
-	{
-		x->x_pc[thirteenth] = 0;
-		chord[c++] = name_class[(rootName + 5) % 7];
-		if (chord_accidental(thirteenth))
-			chord[c++] = 'b';
-		else if (chord_accidental(x->x_chord_root))
-		{
-			chord[c++] = 'b';
-			if (chord_accidental(x->x_chord_root + 9) % 12)
-				chord[c++] = 'b';
-		}
-		chord[c++] = ' ';
-		return c;
-	}
-
-	return c;
-}
-
-static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
+static void chord_draw_chord_type(t_chord *x)
 {
 	char chord[255]; /* output string */
 
@@ -2042,9 +1747,8 @@ static void chord_chord_finder(t_chord *x, t_int num_pcs)
 static void chord_float(t_chord *x, t_floatarg f)
 {
 	t_int velo = x->x_velo;
-	t_int allloc = 0;
 	t_int num_pc = 0; /* number of pitch classes present */
-	int i, j, k, l;
+	int i;
 
 	x->x_pitch = (t_int)f;
 
