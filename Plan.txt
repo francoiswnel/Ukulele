@@ -2,7 +2,6 @@ Ukulele
 
 TODO:
 
-* Output only necessary values.
 * Add method to map selection to filename.
 * Combine notchord output and filename to get path to sample.
 * Configure voices to play note and chord samples.

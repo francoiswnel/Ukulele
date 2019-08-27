@@ -121,12 +121,7 @@ typedef struct chord
 
 	t_inlet *x_invelo;		   /* inlet for velocity */
 	t_inlet *x_indefaultchord; /* inlet for default chord */
-
-	t_outlet *x_outchordval;	   /* chord as MIDI note number of base note */
-	t_outlet *x_outchordclass;	 /* class of chord's bass note */
-	t_outlet *x_outchordname;	  /* chord name, e.g. "Cmajor7" */
-	t_outlet *x_outchordinversion; /* inversion of the chord (root = 0, 1st = 1, 2nd = 2) */
-	t_outlet *x_outchordnotes;	 /* list with note numbers belonging to the chord */
+	t_outlet *x_outchordname;  /* chord name, e.g. "Cmajor7" */
 
 	t_int x_pitch;
 	t_int x_pc[12];		/* pitch class array */
@@ -1737,18 +1732,6 @@ static int chord_name_thirteenth(t_chord *x, char *chord, int c, int rootName)
 static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 {
 	char chord[255]; /* output string */
-	int i, j;
-
-	/* get members of chord */
-	j = 0;
-	for (i = 0; i < 12; i++)
-	{
-		if (x->x_pc[i])
-		{
-			SETFLOAT(x->x_chordlist + j, x->x_abs_pc[i]);
-			j++;
-		}
-	}
 
 	if (x->x_chord_type == kDefault)
 	{
@@ -1974,14 +1957,6 @@ static void chord_draw_chord_type(t_chord *x, t_int num_pcs)
 
 		outlet_symbol(x->x_outchordname, gensym(chord));
 	}
-
-	x->x_chord_bass = x->x_abs_pc[x->x_chord_root]; /* get MIDI note number of bass */
-
-	/* output results */
-	outlet_list(x->x_outchordnotes, NULL, j, x->x_chordlist);
-	outlet_float(x->x_outchordinversion, x->x_chord_inversion);
-	outlet_float(x->x_outchordclass, x->x_chord_root);
-	outlet_float(x->x_outchordval, x->x_chord_bass);
 }
 
 static void chord_kick_out_member(t_chord *x, t_int number, t_int *members)
@@ -2164,12 +2139,7 @@ static void *chord_new(t_floatarg f1, t_floatarg f2)
 
 	x->x_invelo = inlet_new(&x->x_ob, &x->x_ob.ob_pd, gensym("float"), gensym("ft1"));
 	x->x_indefaultchord = symbolinlet_new(&x->x_ob, &x->x_defaultchord);
-
-	x->x_outchordval = outlet_new(&x->x_ob, gensym("float"));
-	x->x_outchordclass = outlet_new(&x->x_ob, gensym("float"));
 	x->x_outchordname = outlet_new(&x->x_ob, gensym("symbol"));
-	x->x_outchordinversion = outlet_new(&x->x_ob, gensym("float"));
-	x->x_outchordnotes = outlet_new(&x->x_ob, gensym("float"));
 
 	x->x_lowerlimit = (t_int)f1;
 	x->x_upperlimit = (t_int)f2;
