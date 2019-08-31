@@ -1,43 +1,49 @@
 Ukulele
 
+       /\_/ \
+[]##### O  | )
+       \/ \_/
+
 TODO:
 
-* Add method to map selection to filename.
-* Combine notchord output and filename to get path to sample.
+* Create JSON data structure mapping chords to notes.
+* Create script to create directory structure and symlinks.
 * Configure voices to play note and chord samples.
 * Add mute method.
 * Add percussion voices.
-* Sample notes and chords.
+* Sample chord strums.
+* Sample percussion.
 
 File structure:
 
 Samples/
-    Common/
-        G/
-            G.wav
-            Ab.wav
-            A.wav
+    Strings/
+        4/
+            4-G.wav
+            4-Ab.wav
+            4-A.wav
             ...
-        C/
-            C.wav
+        3/
+            3-C.wav
             ...
-        E/
-            E.wav
+        2/
+            2-E.wav
             ...
-        A/
-            A.wav
+        1/
+            1-A.wav
             ...
-    A unison/
-        G.wav -> symlink to appropriate single note on G string in Common.
-        C.wav -> symlink to appropriate single note on C string in Common.
-        E.wav -> symlink to appropriate single note on E string in Common.
-        A.wav -> symlink to appropriate single note on A string in Common.
-        Strum Up.wav
-        Strum Down.wav
-    A major/
-        G.wav
-        C.wav
-        ...
+    Chords/
+        A unison/
+            4.wav -> symlink to appropriate single note on G string in Strings.
+            3.wav -> symlink to appropriate single note on C string in Strings.
+            2.wav -> symlink to appropriate single note on E string in Strings.
+            1.wav -> symlink to appropriate single note on A string in Strings.
+            Strum Up.wav
+            Strum Down.wav
+        A major/
+            4.wav
+            3.wav
+            ...
     ...
 
 Sample selection:
