@@ -14,6 +14,9 @@ TODO:
 * Sample chord strums.
 * Sample percussion.
 
+
+Plan 1:
+
 File structure:
 
 Samples/
@@ -46,6 +49,7 @@ Samples/
             ...
     ...
 
+
 Sample selection:
 
 Path format: /Samples/chord/selection.wav
@@ -57,3 +61,46 @@ Behaviour:
 Pressing G, C, E, A, Strum Up, or Strum Down sends the selection and the current chord to a fixed voice for each selection, which plays back the sample at the path comprised by the chord and selection.
 Pressing Mute switches off all voices and plays Mute.wav independently.
 Pressing a percussion selection plays the appropriate percussion sample.
+
+
+Plan 2:
+
+File Structure:
+
+Samples/
+    Strings/
+        4/
+            4-G.wav
+            4-Ab.wav
+            4-A.wav
+            ...
+        3/
+            3-C.wav
+            ...
+        2/
+            2-E.wav
+            ...
+        1/
+            1-A.wav
+            ...
+Chords/
+    A unison.txt
+    A major.txt
+    ...
+
+
+Chord file format:
+
+Line 1: String 1 note.
+Line 2: String 2 note.
+Line 3: String 3 note.
+Line 4: String 4 note.
+
+Example: A minor 7th.txt
+
+A4
+E4
+C4
+G4
+
+Scaffold files with: cat list.txt | sed 's/\r//' | xargs -n 1 -I {} touch "{}"
