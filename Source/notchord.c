@@ -625,7 +625,7 @@ static void chord_quintad(t_chord *x)
 			t->rootMember = i;
 		}
 
-		// minor/major ninths
+		// minor major ninths
 		for (i = 0; i < 5; i++)
 		{
 			st = miM9[i];
@@ -669,7 +669,7 @@ static void chord_quintad(t_chord *x)
 			t->rootMember = i;
 		}
 
-		// minor/major ninth flat 11
+		// minor major ninth flat 11
 		for (i = 0; i < 5; i++)
 		{
 			st = mM91[i];
@@ -745,7 +745,7 @@ static void chord_quintad(t_chord *x)
 			t->rootMember = i;
 		}
 
-		// minor/major  seventh flat nine
+		// minor major  seventh flat nine
 		for (i = 0; i < 5; i++)
 		{
 			st = mMb9[i];
@@ -943,7 +943,7 @@ static void chord_quintad(t_chord *x)
 			t->rootMember = i;
 		}
 
-		// minor/major eleventh
+		// minor major eleventh
 		for (i = 0; i < 5; i++)
 		{
 			st = mM11[i];
@@ -1481,7 +1481,7 @@ static void chord_draw_chord_type(t_chord *x)
 			strcat(chord, "diminished 7th");
 			break;
 		case kMinMaj7:
-			strcat(chord, "minor/major 7th");
+			strcat(chord, "minor major 7th");
 			break;
 		case kMaj7s5:
 			strcat(chord, "major 7th #5");
@@ -1553,7 +1553,7 @@ static void chord_draw_chord_type(t_chord *x)
 			strcat(chord, "diminished b9");
 			break;
 		case kMinMajb9:
-			strcat(chord, "minor/major b9");
+			strcat(chord, "minor major b9");
 			break;
 		case kDimMajb9:
 			strcat(chord, "diminished M7 b9");
@@ -1592,7 +1592,7 @@ static void chord_draw_chord_type(t_chord *x)
 			strcat(chord, "diminished 11th");
 			break;
 		case kMinMaj11:
-			strcat(chord, "minor/major 11th");
+			strcat(chord, "minor major 11th");
 			break;
 		case kDimMaj11:
 			strcat(chord, "diminished maj 11th");

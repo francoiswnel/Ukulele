@@ -104,3 +104,24 @@ C4
 G4
 
 Scaffold files with: cat list.txt | sed 's/\r//' | xargs -n 1 -I {} touch "{}"
+
+
+Chords:
+
+C unison
+C major
+C minor
+C augmented
+C diminished
+C dominant 7th
+C minor 7th
+C major 7th
+C dominant 7th #5
+C diminished 7th
+C half diminished 7th
+C minor/major 7th
+C dominant 9th
+C major 9th
+C minor 9th
+C dominant 11th
+C minor 11th
