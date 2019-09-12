@@ -8,6 +8,8 @@ TODO: Description
 
 # Features
 
+![Interface](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Interface.png)
+
 * TODO
 
 # Download
@@ -15,7 +17,7 @@ TODO: Description
 Download the latest release:
 
 * [Patchstorage]()
-* [GitHub]()
+* [GitHub](https://github.com/francoiswnel/Ukulele/releases/latest)
 
 Installation instructions:
 
@@ -29,16 +31,21 @@ Please leave feedback or ask questions in the [Critter & Guitari forum thread]()
 
 # Licensing
 
-The code is licensed under [GPL 3.0](), and the samples are released under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/). Feel free to use the samples for anything, but if you do use it, please let me know!
+The code is licensed under [GPL 3.0](https://github.com/francoiswnel/Ukulele/blob/master/LICENSE.md), and the samples are released under [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/). Feel free to use the samples for anything, but if you do use them, please let me know!
 
 # Credits
 
-Tuner adapted from [Pitch Shift](https://github.com/pure-data/pure-data/blob/master/doc/3.audio.examples/G09.pitchshift.pd) in the Pure Data examples.
+* Notchord adapted from [Chord](https://github.com/electrickery/pd-maxlib/blob/master/src/chord.c) by Olaf Matthes.
+* Tuner adapted from [Pitch Shift](https://github.com/pure-data/pure-data/blob/master/doc/3.audio.examples/G09.pitchshift.pd) in the Pure Data examples.
 
 # Pure Data Screenshots
 
 Main:
 
-![main.pd]()
+![main.pd](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Screenshots/main.png)
 
-![string.pd]()
+![string.pd](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Screenshots/string.png)
+
+![percussion.pd](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Screenshots/percussion.png)
+
+![tuner.pd](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Screenshots/tuner.png)

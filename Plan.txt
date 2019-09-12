@@ -1,5 +1,6 @@
 TODO:
 
-* Sample percussion and mute.
-* Add mute method.
-* Add percussion voices.
+sample percussion
+simplify makefile
+write readme
+create install package

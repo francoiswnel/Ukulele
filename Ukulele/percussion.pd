@@ -1,0 +1,16 @@
+#N canvas 339 264 517 454 10;
+#X obj 345 265 readsf~;
+#X msg 345 208 1;
+#X obj 345 124 inlet;
+#X obj 345 293 outlet~;
+#X text 345 98 PLAY;
+#X msg 77 208 open \$1;
+#X obj 345 180 del;
+#X obj 77 180 makefilename ./Samples/Percussion-\$1.wav;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 2 0 7 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;
+#X connect 7 0 5 0;
