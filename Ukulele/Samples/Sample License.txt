@@ -1,0 +1,1 @@
+All samples included in this patch are licensed under CC0.
