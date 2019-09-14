@@ -32,6 +32,10 @@ Installation instructions:
 2. From the Organelle menu, reload the storage.
 3. Navigate to the patch and select `Install Ukulele.zop`.
 
+# Build
+
+To build the `notchord` object from source, run `make` in the same directory as the `Makefile`. This shouldn't be necessary unless you make changes to the code.
+
 # Discussion
 
 Please leave feedback or ask questions in the [Critter & Guitari forum thread](), or [create an issue](https://github.com/francoiswnel/Ukulele/issues) on GitHub.
