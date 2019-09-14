@@ -26,7 +26,7 @@
 #X msg 440 403 line 0;
 #X obj 440 487 list store;
 #X msg 440 459 prepend \$1;
-#X msg 377 403 get 0 4;
+#X msg 373 431 get 0 4;
 #X obj 440 515 list trim;
 #X msg 130 318 Strings:;
 #X obj 440 346 bang;
@@ -75,6 +75,7 @@
 #X obj 336 346 s screenLine2;
 #X obj 130 346 s screenLine3;
 #X obj 440 543 s screenLine4;
+#X obj 373 403 del;
 #X connect 2 0 3 0;
 #X connect 3 0 8 0;
 #X connect 3 1 8 1;
@@ -112,8 +113,8 @@
 #X connect 28 0 75 0;
 #X connect 29 0 74 0;
 #X connect 30 0 24 0;
-#X connect 30 0 27 0;
 #X connect 30 0 23 0;
+#X connect 30 0 76 0;
 #X connect 31 0 34 1;
 #X connect 31 0 39 1;
 #X connect 32 0 35 1;
@@ -195,3 +196,4 @@
 #X connect 69 0 65 0;
 #X connect 70 0 65 0;
 #X connect 71 0 65 0;
+#X connect 76 0 27 0;
