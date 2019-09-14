@@ -19,6 +19,10 @@ Ukulele is a sample-based patch for the [Critter & Guitari Organelle](https://ww
 * The four knobs can be used to detune the strings up or down a full tone. To reset the tuning, restart the patch.
 * The samples were recorded using a Kala KA-CE concert scale ukulele.
 
+# Known Issues
+
+* Please note that on first playback, some samples might artefact a little as they are read from the storage medium. This should go away on subsequent playbacks, so just play some chords and strum through the notes to cache the samples in memory.
+
 # Download
 
 Download the latest release:

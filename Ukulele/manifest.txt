@@ -1,0 +1,295 @@
+aa36ab4314cd5f59356dcc6d4a4414bc1527e237  Ukulele/knobs.txt
+ca5b527a2f8c820a4ac215b046476e76a7ef9de3  Ukulele/Chords/Db augmented.txt
+3d385ca104734ea72f2e4944d0b525859f8fa039  Ukulele/Chords/B unison.txt
+31be3d06deee6f9fd3fc17bb1e30f20b4d8e1799  Ukulele/Chords/F dominant 11th.txt
+5016c4df40cb0881e0a940735c672a643b996571  Ukulele/Chords/Ab minor 7th.txt
+6420c1cd0047c3dc0e544f4fb9ad805066d785e6  Ukulele/Chords/D major.txt
+935bdd2cf9e5568d5acd02252c81a77480edaeaa  Ukulele/Chords/C diminished.txt
+7b2f832198614758c69c76d7b0a64fad9b9a08cb  Ukulele/Chords/B dominant 9th.txt
+21f8761abcdb101cb90fa1092608a3c65f9db8a9  Ukulele/Chords/Bb major 7th.txt
+9d2dbf2c4f6bdcf0dd37934c8bc8ef98324ac5dc  Ukulele/Chords/G augmented.txt
+3748f8cdc933b0f777f60c439bed29f0ecc2239e  Ukulele/Chords/D minor.txt
+a669ef13f472b7cd19a6656eb9c4aa3ebbd8ab7a  Ukulele/Chords/Gb dominant 9th.txt
+9512f1b25b0bbb5b0ff5f4ed96b115fa91671fba  Ukulele/Chords/E dominant 9th.txt
+c6bbdf22e8a7847c4d6cf08503569f0c0effb891  Ukulele/Chords/G major.txt
+948d02d11c086b4f8161f287b687080d0edb0d9a  Ukulele/Chords/F diminished.txt
+2b4967b86a43b931a774c0a3aaf0b8b092808ea1  Ukulele/Chords/G dominant 7th #5.txt
+b0ca8c10376f19584864ec0cfac4c23fe761b110  Ukulele/Chords/D minor 11th.txt
+6420c1cd0047c3dc0e544f4fb9ad805066d785e6  Ukulele/Chords/D unison.txt
+f3f395082a2056b9db903761aad65d81f6e46b35  Ukulele/Chords/D dominant 7th #5.txt
+049212f56cb8b9c9379e2a8cb784d4c0eab9b1ad  Ukulele/Chords/Db major 7th.txt
+880bb6bd7034db6420aa907b6fc6f871faa863bf  Ukulele/Chords/B minor 7th.txt
+85a2a1c6f3a27061bbc8829d01dd127f03fd4e52  Ukulele/Chords/Gb dominant 11th.txt
+afd2a50e7cf5956aa1982b40d44a2d01f28f2640  Ukulele/Chords/Bb dominant 7th #5.txt
+ffb6dec51a2cae7fa3aaf5eb1f0a21c50c47545a  Ukulele/Chords/F dominant 7th #5.txt
+aa149da925dbe1e732e322afeecd120e2e75fdcd  Ukulele/Chords/Gb minor 11th.txt
+27cf623df2f9b67d3581a48239fffddffab3bb84  Ukulele/Chords/Bb dominant 7th.txt
+1b6e6f164e62a07d8e8270eccd9613480d990fe2  Ukulele/Chords/Ab minor 9th.txt
+f4491365b2583724c827f2809990f3c584add612  Ukulele/Chords/Bb unison.txt
+fdf1a7065b6f8e52319bd4950f0b59853a432644  Ukulele/Chords/D dominant 7th.txt
+c7a71bd4a63a0ba764704ead77b753b991d7ded6  Ukulele/Chords/C major.txt
+76767000cc5a19387462e9ef53d531a2521fbb5f  Ukulele/Chords/Bb minor major 7th.txt
+3ad830bc2ee9c22a565916bec505a536eaea4b2a  Ukulele/Chords/Gb major.txt
+b6a6ee5d9b68702fcc00c29f916e5cab98182486  Ukulele/Chords/A augmented.txt
+50a8968c016c6a053d8f169bb5c5a7b57e26214b  Ukulele/Chords/E diminished.txt
+f5c7fd82e9cea9280f29dd9fdc2bcb28aee12fc9  Ukulele/Chords/Gb major 7th.txt
+54a7540cfa8b23c0f05cd4de1090eb972928ef9f  Ukulele/Chords/B major 7th.txt
+37298bb552ec2e4d6b1c03c0094d9afcac06bb8e  Ukulele/Chords/C minor major 7th.txt
+a5145974075a311167c2ce76eefd90ebba4ff1ae  Ukulele/Chords/A half diminished 7th.txt
+ac136a6bb24863cd1dbdc6794bd6607c8077aecc  Ukulele/Chords/Db diminished.txt
+d758e86547df2ea0b0b90964a51aac1f25ff3c6a  Ukulele/Chords/D major 9th.txt
+77fc6a8873a1f5fd04738aa7ae824b510f5e40d7  Ukulele/Chords/G major 7th.txt
+faeb026fca756a0020a5242dd6bc15d3b48e50b1  Ukulele/Chords/A dominant 7th.txt
+c16954a50fe2ee0d74087314a10b7efef77d764b  Ukulele/Chords/A diminished 7th.txt
+a41f372624bc55f9da221f72c099fc326a4cc3f1  Ukulele/Chords/E major 7th.txt
+4b28c8400a34afccf48bae5466bcf3ba364e673d  Ukulele/Chords/Eb major.txt
+fc9ccdc496d10d807f6cc049ecbb6aee486ef8fc  Ukulele/Chords/F unison.txt
+753761e437b495ab919a55df9a1c8d7302d01f28  Ukulele/Chords/Ab dominant 7th #5.txt
+0dc507202be059f126afe644743b890716a5e4fb  Ukulele/Chords/E minor.txt
+57ccb8c96705cf225f17b74d6f9c55dd0ecdac25  Ukulele/Chords/Gb minor 7th.txt
+a3e1b4f1d3e3eb64d7f54393a9fdc19e1843ddad  Ukulele/Chords/B minor.txt
+6ad5bde030f130a5bce5e1bbe04339dac474104a  Ukulele/Chords/Ab minor.txt
+4d0542d2843161763472a777dc1e64274fd55855  Ukulele/Chords/F minor 9th.txt
+cf1507d3843282470af807fd144bfa6a76cba2b9  Ukulele/Chords/B minor 9th.txt
+c888a0bc412d944f366b76aba20f422e81edf8c8  Ukulele/Chords/Db dominant 11th.txt
+79aa8a914a4e0ad3b8ecaf59e6421bd7cb67942b  Ukulele/Chords/Db dominant 7th.txt
+30d9f3cca4dceba1c6f5281178164da526911fec  Ukulele/Chords/C dominant 7th #5.txt
+d20381be464fd08d2f7b295e087fb58a94fb5ef9  Ukulele/Chords/D minor 7th.txt
+70eeb6ac4164f1e473b1a5975daa3730860d66ea  Ukulele/Chords/Ab minor major 7th.txt
+7ff1343d0a7b0295bcc791b3adee2e546837792a  Ukulele/Chords/F dominant 9th.txt
+fee36a2657d8f6ae35c40acb7aab311117c79090  Ukulele/Chords/B major 9th.txt
+1e8b53025fb7255e594f7228be0c08b1b9a84495  Ukulele/Chords/E diminished 7th.txt
+331dfd8c1f1f6aa7a47b5d8384d92c4fc5875e96  Ukulele/Chords/B dominant 11th.txt
+d4c684291a010cd6a277eb419261069404120e1f  Ukulele/Chords/Ab diminished 7th.txt
+5b6fbb1dd4dd7eea77bfe47ea71201e8df3addcb  Ukulele/Chords/Bb major 9th.txt
+c1acc26a54e0395dc03876032e3fb9ee7ccc3d61  Ukulele/Chords/Ab dominant 9th.txt
+47fa954a996d1b86f99a559466afe4ce7e23c6db  Ukulele/Chords/Ab minor 11th.txt
+8128a3a5e942e8bc2bcc421084b9d801178c909c  Ukulele/Chords/E minor 7th.txt
+12d65de204da33893642110bcb3014b7d92e1481  Ukulele/Chords/Eb diminished.txt
+cdecc57d83cb0f3203f5c778ef4d9957fb6645c8  Ukulele/Chords/Bb minor 7th.txt
+79ff4ea8bb155256637f04fa53e76fa27503e10a  Ukulele/Chords/Eb minor 7th.txt
+9b433391ba33dfa925395437b59eac93106b4750  Ukulele/Chords/A minor 9th.txt
+d6899da5debbf0df286b1bccd0b27cd079072329  Ukulele/Chords/Eb dominant 9th.txt
+68a790183f547144ebfef31f372986a4fb6771cb  Ukulele/Chords/G diminished.txt
+ca5b527a2f8c820a4ac215b046476e76a7ef9de3  Ukulele/Chords/F augmented.txt
+03df389f3dc72d20c0ff2df9d8dd1376f3423bbc  Ukulele/Chords/B minor major 7th.txt
+b2c8b896c3f61967b8592c794e00dedb7f50e121  Ukulele/Chords/Bb diminished.txt
+e5ac4c99cddc7ad68e0bc6173a341b86d90ae769  Ukulele/Chords/Ab half diminished 7th.txt
+065716ebdaec4a61cd4ef35d5173f5f7ebafc299  Ukulele/Chords/G minor 7th.txt
+d4c684291a010cd6a277eb419261069404120e1f  Ukulele/Chords/F diminished 7th.txt
+27037cfd28a278949eae4e14bfc806875c548cd8  Ukulele/Chords/Ab dominant 11th.txt
+a28de329933a219518c0c522a81a293be5eb8ec8  Ukulele/Chords/Ab major.txt
+8c5133ae74b9581c142020814d33e5c6a11addc6  Ukulele/Chords/A minor.txt
+26040f9e4e14f39514b3fd95774c73aeac310ab8  Ukulele/Chords/G half diminished 7th.txt
+eff8bbaf71a5361530b43d71b8b0208e380f2615  Ukulele/Chords/Db minor 9th.txt
+c16954a50fe2ee0d74087314a10b7efef77d764b  Ukulele/Chords/Eb diminished 7th.txt
+fc9ccdc496d10d807f6cc049ecbb6aee486ef8fc  Ukulele/Chords/F major.txt
+3658f64d6cf5b7daff94cb510c4effa06431ad46  Ukulele/Chords/A diminished.txt
+4b28c8400a34afccf48bae5466bcf3ba364e673d  Ukulele/Chords/Eb unison.txt
+3e0fb6fb251e0489df9c2a1d407f5fc70dc2e6ff  Ukulele/Chords/E dominant 7th.txt
+6be60ffd75daa2200aa40ab53ace9bf66592d096  Ukulele/Chords/Gb dominant 7th #5.txt
+c16954a50fe2ee0d74087314a10b7efef77d764b  Ukulele/Chords/C diminished 7th.txt
+9d2dbf2c4f6bdcf0dd37934c8bc8ef98324ac5dc  Ukulele/Chords/Eb augmented.txt
+980c18724da0679eac9704da3c266b62c57b43ab  Ukulele/Chords/Eb dominant 7th.txt
+8b07e7423dcb3a16c5b1fd1f9af3e16130f9beb6  Ukulele/Chords/G minor major 7th.txt
+69c6a6a85e773da4de7327c78c40b2f8d0f0795a  Ukulele/Chords/Eb dominant 7th #5.txt
+7e23451e63f0261be7349829c3251502af81b98e  Ukulele/Chords/Bb minor 9th.txt
+01099393d767038ab169b148a44a0781f0096bdd  Ukulele/Chords/A dominant 11th.txt
+52d42aab7932d47d00ce844c909a6e7f0ea47909  Ukulele/Chords/Db unison.txt
+2130851ddb34a298bddb3f3b96d689c87aacbef3  Ukulele/Chords/C major 7th.txt
+d4c684291a010cd6a277eb419261069404120e1f  Ukulele/Chords/B diminished 7th.txt
+c7a71bd4a63a0ba764704ead77b753b991d7ded6  Ukulele/Chords/C unison.txt
+e61df7e4567f22f73d5bf80bb6d95def9a0b1f15  Ukulele/Chords/Eb minor 11th.txt
+b21628e5ae08ef5107af9962ee18f7512fa5de10  Ukulele/Chords/Eb minor.txt
+75be8dd086b6b11b61489da350618316369c1188  Ukulele/Chords/F major 7th.txt
+01452c56b91b6ed33032f8c3ffbcd9fc904f269c  Ukulele/Chords/Eb major 7th.txt
+fb97c16639679e3627764b57743fe46853689165  Ukulele/Chords/Gb diminished.txt
+aae874739271f21933234ea2ec5761cefd28dc4c  Ukulele/Chords/Gb major 9th.txt
+d7b423819db287bfe9638c5f36e47dfdbd1d98fe  Ukulele/Chords/Bb dominant 9th.txt
+dc8eaa2c1ea1576a506bdaf1bb637fd9b9ab64de  Ukulele/Chords/C dominant 9th.txt
+d4c684291a010cd6a277eb419261069404120e1f  Ukulele/Chords/D diminished 7th.txt
+302fa92afc1c78a87bd771670a4ee47433ae8576  Ukulele/Chords/Db dominant 9th.txt
+8d6c21a8ba9835a77ce512a872f9563c1e6fcd6b  Ukulele/Chords/G minor 11th.txt
+14d6ab93419cee2cb5f3a4eede889fa697b26eb3  Ukulele/Chords/C minor 9th.txt
+9efe5f593474c9680ea8e1ec6d92c244ce448666  Ukulele/Chords/Eb major 9th.txt
+a6b29b8d6a374200a1a18d015936965d16422cf8  Ukulele/Chords/Db half diminished 7th.txt
+4a4f3e39942a793efa105fc46db5f5fc59d70cd3  Ukulele/Chords/Eb minor major 7th.txt
+45f69ab99923a4bbe6e55c4f742c100eec3c11da  Ukulele/Chords/Gb minor 9th.txt
+df648cf53c60723bee042cbcbab00e640f9c7556  Ukulele/Chords/Ab major 9th.txt
+f929f4286311cd25fac7cc6fc6698e4b307198b1  Ukulele/Chords/C dominant 11th.txt
+3ec4ee23cc3fed99a1fe7b8f29b4372e608ac2b4  Ukulele/Chords/F dominant 7th.txt
+f8b7f72f3e8b5bb513e6efbdbc8a37186df36987  Ukulele/Chords/D minor major 7th.txt
+b3164606420bab6054ca2b9f1989b0691447aa70  Ukulele/Chords/Eb half diminished 7th.txt
+33a109289478733edae38c1d62343bf558ac276d  Ukulele/Chords/Ab diminished.txt
+a776aad5989cd4159541331e07bd0c79a7766d94  Ukulele/Chords/E half diminished 7th.txt
+92c0cff87918cb48f8b5713dc56b1e75402ce421  Ukulele/Chords/E minor major 7th.txt
+6ed3eb436d23c3598961c944182363b9bf64cf98  Ukulele/Chords/A dominant 7th #5.txt
+02e76bd48f9ad3abfcffcb5bf4fb101fca22a45d  Ukulele/Chords/Bb minor.txt
+a28de329933a219518c0c522a81a293be5eb8ec8  Ukulele/Chords/Ab unison.txt
+6524b8c2f0fde15cbb5beb3c43f3835cde2ede19  Ukulele/Chords/E dominant 11th.txt
+ceaebbe71ae70ecc4021efa8de5c5e1b76716305  Ukulele/Chords/E minor 9th.txt
+2bed397f9713153f6980ae9bfeafb4a2eff0c7b1  Ukulele/Chords/Gb half diminished 7th.txt
+3d1b5f3a1ee01a0e59a4fd26275eed9f9127c6dd  Ukulele/Chords/C minor.txt
+6eafa83edb53c263f0efca85ca695deeb229d9e3  Ukulele/Chords/A minor 7th.txt
+3d385ca104734ea72f2e4944d0b525859f8fa039  Ukulele/Chords/B major.txt
+1e8b53025fb7255e594f7228be0c08b1b9a84495  Ukulele/Chords/Db diminished 7th.txt
+a8d07811f87d1a9f207e37ad61fd57a13d9c0de6  Ukulele/Chords/A minor 11th.txt
+954eab8fd9e23e4fbe1a27afdc5443c037bbc856  Ukulele/Chords/C minor 7th.txt
+7b72b8b914c4e6628f07c0250cb738915c1d9c61  Ukulele/Chords/Ab dominant 7th.txt
+00e678c2bdb703b02dec2a4a6e17f8f5c26376e0  Ukulele/Chords/F minor 11th.txt
+cca0f0469c268769c28c44bf5294a60635fef1ca  Ukulele/Chords/A unison.txt
+cd749caeaf9c1627b26947a10f78309dbfaf20c1  Ukulele/Chords/B minor 11th.txt
+ee29b49b8d468ca7ef04022d4f80e6d956f895c0  Ukulele/Chords/G dominant 9th.txt
+c7f6b9d25443bdec8f578d190a71f6841957ddbe  Ukulele/Chords/D dominant 11th.txt
+f51e072655469550c2e2f73d0bc5a4db2e378c7f  Ukulele/Chords/Bb augmented.txt
+b50499442f4f14d5ab413e35f8b193018cc0859f  Ukulele/Chords/B half diminished 7th.txt
+1db7c88f4eca774cf3b36ebb34a0d736ca9104b3  Ukulele/Chords/Gb diminished 7th.txt
+1540196edf87d8bd50dbb0d84724bee72a617a8a  Ukulele/Chords/D diminished.txt
+3ad830bc2ee9c22a565916bec505a536eaea4b2a  Ukulele/Chords/Gb unison.txt
+c7824f834056d002615a432db43a291e5b856a8f  Ukulele/Chords/C minor 11th.txt
+a3c13dbd29fb49de82aa67c155e33f0eecfab33f  Ukulele/Chords/E major 9th.txt
+51daff7bb8f500359bace0c3e840222c8e56ee9b  Ukulele/Chords/Db minor.txt
+0234d2171c9f711262b7cb6c5c681a7b204dd492  Ukulele/Chords/F minor 7th.txt
+adbd30640d06ac1e3c99cd36752e3c561956fa11  Ukulele/Chords/E unison.txt
+cca0f0469c268769c28c44bf5294a60635fef1ca  Ukulele/Chords/A major.txt
+9eee310fd2d77350e94fd733ce73578445d31190  Ukulele/Chords/Eb dominant 11th.txt
+1e8b53025fb7255e594f7228be0c08b1b9a84495  Ukulele/Chords/Bb diminished 7th.txt
+f20e47db9274146944eeb1bd6533e056408d7a8a  Ukulele/Chords/Db major 9th.txt
+8fdb0569d62c224109f66af32e7245418f80022e  Ukulele/Chords/G major 9th.txt
+52d42aab7932d47d00ce844c909a6e7f0ea47909  Ukulele/Chords/Db major.txt
+0afee11133fccbed30a7b764bc628e8d1ba7f7b9  Ukulele/Chords/B diminished.txt
+f4491365b2583724c827f2809990f3c584add612  Ukulele/Chords/Bb major.txt
+13b5a44358993b308e8dac2d53b124a8437ab301  Ukulele/Chords/Bb minor 11th.txt
+a4f0e351ac3ee2e44c772dc43bb86d4164757e4d  Ukulele/Chords/E minor 11th.txt
+9f5277d41eb2560c1d2ae7a8327bc3ad8c48e4f1  Ukulele/Chords/B augmented.txt
+c02eb6e95494ebea3078814bf35cb47433b14eb6  Ukulele/Chords/B dominant 7th #5.txt
+ad96bcdcf04397f7060c47f7fe4ae2bd41cdbe59  Ukulele/Chords/Db dominant 7th #5.txt
+09ebfe9da3216e1cd29085cfaf1891e7336392ce  Ukulele/Chords/A major 7th.txt
+421d3f1c955b38d75794a018be902b98cf7d7ca9  Ukulele/Chords/G minor 9th.txt
+5e224a0b262499559b33518d0a6aefee79c98877  Ukulele/Chords/B dominant 7th.txt
+f51e072655469550c2e2f73d0bc5a4db2e378c7f  Ukulele/Chords/Gb augmented.txt
+4d371bdf8fbf0a684aa7f34f524e7300770242e4  Ukulele/Chords/Db minor major 7th.txt
+cd13529c05bf18e905215d3fe2e41e7171bf2b27  Ukulele/Chords/D major 7th.txt
+c0bfbc859021a6355b22befe7b36acabe51eb3a3  Ukulele/Chords/D half diminished 7th.txt
+c6bbdf22e8a7847c4d6cf08503569f0c0effb891  Ukulele/Chords/G unison.txt
+f51e072655469550c2e2f73d0bc5a4db2e378c7f  Ukulele/Chords/D augmented.txt
+0adbb3dbe864f1166b6eeb80acee17df91a15804  Ukulele/Chords/F minor major 7th.txt
+cf45414456694878ce4a7149d5d70d379d241b83  Ukulele/Chords/Bb dominant 11th.txt
+3bca0d3482812983eacef1aa91e4342ae03dceca  Ukulele/Chords/Ab augmented.txt
+adbd30640d06ac1e3c99cd36752e3c561956fa11  Ukulele/Chords/E major.txt
+9251e4a447c37f0d714fe8240c1597e5b592924a  Ukulele/Chords/F minor.txt
+63cba44ef987e1b7b9f7bfd5739521a53d7cbb7c  Ukulele/Chords/F half diminished 7th.txt
+83535691ef16597c2d62419cb15f96410b2c9ae2  Ukulele/Chords/F major 9th.txt
+a3dde980d5cb748eb951140cc7f39130a4b6f3a6  Ukulele/Chords/G minor.txt
+db99cff82693b7468ef27534c47d17855f528306  Ukulele/Chords/D dominant 9th.txt
+942202386838fa267007d6fe02f9ca077069912b  Ukulele/Chords/G dominant 11th.txt
+8bfdca4f5932266aba88be4f065fa23eaa10818d  Ukulele/Chords/C dominant 7th.txt
+27160e1040e9a3ee1e1c0f219c91e34a810efc27  Ukulele/Chords/E dominant 7th #5.txt
+e3ee100fa3edeed944dc8c68893f8c108d1f68c4  Ukulele/Chords/A dominant 9th.txt
+6e5d0e6048c8bbf059524e27779fe95c6b30a134  Ukulele/Chords/Bb half diminished 7th.txt
+1e8b53025fb7255e594f7228be0c08b1b9a84495  Ukulele/Chords/G diminished 7th.txt
+f43bb2a96dfa245b4ccf36c01be28457cda5d09e  Ukulele/Chords/Eb minor 9th.txt
+93f7581f4008e850d2696eca65aa54d0f071cfc7  Ukulele/Chords/G dominant 7th.txt
+fcd745ad88d59d9088d6cb19d3a22ebd313b21eb  Ukulele/Chords/Gb minor.txt
+b6bb3f65d15b1aaa0e1a151f2a3238867994c7fd  Ukulele/Chords/D minor 9th.txt
+a4ef35608c3d11ffb06cc2335bdb606fcd13d69d  Ukulele/Chords/Db minor 11th.txt
+3bca0d3482812983eacef1aa91e4342ae03dceca  Ukulele/Chords/C augmented.txt
+42c8c0615f9ceb46ad5cd8458deee75edeb29606  Ukulele/Chords/A minor major 7th.txt
+b858903a9fd792cd38911f2675c475be7677f223  Ukulele/Chords/Gb dominant 7th.txt
+3bca0d3482812983eacef1aa91e4342ae03dceca  Ukulele/Chords/E augmented.txt
+b9446b307ae3d75bd8bcb0ee5e38e28da1babdb7  Ukulele/Chords/C half diminished 7th.txt
+48df9ac676f7732bd5f196e0dd0115992593d021  Ukulele/Chords/C major 9th.txt
+ac38cc9d4cdb159cb78314af1774a1af1b50b21c  Ukulele/Chords/Db minor 7th.txt
+5b6a1cc21cfd582f0bb631cedc61641a0a58fd38  Ukulele/Chords/Gb minor major 7th.txt
+197be8196898cd633d11e880fff4b542bd2e500d  Ukulele/Chords/A major 9th.txt
+4584ab905fbaafeb52d45a7b7d102ed2825e7f3f  Ukulele/Chords/Ab major 7th.txt
+36957b038ea8b99195ea3c2e3542e6567fa242f4  Ukulele/main.pd
+6162a5c33fb80702f23191f9db8057a512b8b22e  Ukulele/percussion.pd
+de95354372a438fa32013de86c72f580415c42bf  Ukulele/Samples/2-Db5.wav
+1e5505d5ecff08e5834e51f357eb7cb308aa0a26  Ukulele/Samples/4-D5.wav
+726a19cd636d33b1e903fb92808c23026e7c65b8  Ukulele/Samples/3-A4.wav
+e3ed714b78a3bd6e11523a11bdac552e831c7013  Ukulele/Samples/3-Eb5.wav
+7a9c18bb552e0e2f0f82459a59ec4d73fc5c3b15  Ukulele/Samples/1-Db5.wav
+681639eb2dd1f21b99d1b67db006f282143ff37d  Ukulele/Samples/4-C5.wav
+ca4044748706c0689cda8220abad93c98ef9199d  Ukulele/Samples/4-A4.wav
+125bb1091ce222363e8f6310fbc8629705bacb5c  Ukulele/Samples/3-D5.wav
+cf02f0e7a266f471b6399aef9025db1cdd5fcdb1  Ukulele/Samples/Percussion-5.wav
+f8559609fdccc7c01b2f919a6c670b322f0a8109  Ukulele/Samples/2-F4.wav
+77ab46e5dce533c171c10ce061503010b2f057d5  Ukulele/Samples/4-B4.wav
+690ca80f636904cf6a8847c8e624ffa84d019cbb  Ukulele/Samples/4-Bb5.wav
+927db3b9fb210b9bb2fbe90d5c6bfeb7769b0727  Ukulele/Samples/4-Db6.wav
+941db014051decf35aba30abbcb503eec7d05a3d  Ukulele/Samples/1-Gb5.wav
+06ca60d0af7ac0a828f79da4e7118efb815c599c  Ukulele/Samples/4-Ab5.wav
+d2ee2cf6b125d020767d1f0f588a3012a9aaacda  Ukulele/Samples/3-D4.wav
+9ddf2ea61e5a5f4f55cdf3ca64187b4d7cbdcc81  Ukulele/Samples/4-Db5.wav
+e87efae33bb9f26a46cdb45e11fd1a9c701ca281  Ukulele/Samples/1-A5.wav
+7b1793e3f8f9945a7b53badeb2d26f876f57f16e  Ukulele/Samples/4-F5.wav
+04f248639b975ebbb998dcd32047517aac311630  Ukulele/Samples/1-Db6.wav
+10dca78f00e0a57e0da6d5c5ebd2a0c4d3389648  Ukulele/Samples/Percussion-2.wav
+61b2097527168cf93aae2f7f31b644471ed4f2e9  Ukulele/Samples/2-Eb5.wav
+f7313fa73e25b843e49e8c9cd845b995b547e48d  Ukulele/Samples/4-G5.wav
+3986437516c68ccb52018f931adb29678896e90a  Ukulele/Samples/3-C4.wav
+2be18c061e423efee616d72216d97e82d146f807  Ukulele/Samples/2-G4.wav
+665a9a73e04b9fe68e34f6188547b934516b43e3  Ukulele/Samples/2-B4.wav
+64be77d16ae9561b4c3d45e7542161bb31c985b2  Ukulele/Samples/3-G4.wav
+b106c645fddd66fdc10c3d24101911ad5928dba4  Ukulele/Samples/3-Eb4.wav
+04687026392afad215d098e66362db932a3e231e  Ukulele/Samples/2-D5.wav
+5113a2d8ed62d3940b897a6e7a85a953690a1266  Ukulele/Samples/3-F4.wav
+dbf50b870d39a53437495325819bc3fccc471c6c  Ukulele/Samples/1-E5.wav
+9acb556b55c42d5e778668ad718ea685dc34e79d  Ukulele/Samples/1-C6.wav
+5be5bf515ace80823026e2078390a0c4545b5235  Ukulele/Samples/4-C6.wav
+57ca87f4eff2b4ebcb916cf180c0a463e21fe7e9  Ukulele/Samples/3-Db5.wav
+6226f9e035054728c281c8bbfd625310619491e6  Ukulele/Samples/1-Eb6.wav
+6349dc9d709c43f1413e931f626d4616862b53b8  Ukulele/Samples/4-A5.wav
+80213470c527401b1ceead47ead3948be3c40e05  Ukulele/Samples/2-Ab4.wav
+1411ccb48764d90fbe00eb6372b0f553d685705e  Ukulele/Samples/2-Gb4.wav
+abe9ba7b8ac59d10d73fa1f9a3b620a573196791  Ukulele/Samples/4-E5.wav
+bdd611e1c815d0f8b777e8d8482854ab355b16e5  Ukulele/Samples/2-G5.wav
+9dd8d7c452e5a380696c2ad20f797a326c0c59b2  Ukulele/Samples/3-Bb4.wav
+7b8cfb64b17cb60c4587fcc8b74bfb91982a5113  Ukulele/Samples/4-B5.wav
+68deed4dd184fadf63f6198843d434141f0da8c1  Ukulele/Samples/3-Db4.wav
+4c6ab54420d5e8ea8c7723389704668a601f7759  Ukulele/Samples/2-Gb5.wav
+64e60911e14f1533d00d94b55c8484a11b3d5419  Ukulele/Samples/4-X.wav
+e6b2a6b41d5430f84d2b0bd6d6b5149e74342182  Ukulele/Samples/3-B4.wav
+5749a8b320d731980675be609bc43ff90a1673be  Ukulele/Samples/4-Bb4.wav
+affcac996cdcf261c7cc7a3f3133b8fb2be6fbc9  Ukulele/Samples/1-Bb4.wav
+e9fe07fa067d428eb902e94454cdd927f3625acd  Ukulele/Samples/Percussion-4.wav
+a657de38093a3997513a151a6fd373b1de0d2ab8  Ukulele/Samples/1-A4.wav
+5d3b8b7a1e40fd0daeefa564325ff780029dcf0b  Ukulele/Samples/1-D6.wav
+301e2f177f73ec824ffb744d217e70b102676925  Ukulele/Samples/1-Eb5.wav
+07e34e598d8d74e428e0cd5e655bd5d904531122  Ukulele/Samples/2-C5.wav
+7501f1ed1d83ead364e68cb3b083d4e23e2717a9  Ukulele/Samples/2-Bb4.wav
+b5a353c1aa12718f504400b16f803b26cdaea39f  Ukulele/Samples/3-Gb5.wav
+8fbcf4638025b5690434598fc17c51ea9d1af722  Ukulele/Samples/1-G5.wav
+779906c8613347d21aab5f5ecf9f018294867aae  Ukulele/Samples/3-C5.wav
+6bab0c0d69d996f25c7f7a1fe067eeee19c04ab8  Ukulele/Samples/1-B5.wav
+32cb63477a0e3a676fd5e3b42a1e0155226f3e73  Ukulele/Samples/3-Gb4.wav
+c1e5f21c1e7a064c1bd3af684e1624c77fa1cc28  Ukulele/Samples/1-Bb5.wav
+1dc7ae1ef436e6e92a7073577e1f3c71444f1df3  Ukulele/Samples/3-F5.wav
+51e3ab35834a3f9f4e7687c0ea58d23e89bfc88a  Ukulele/Samples/Percussion-1.wav
+a079b90a0c869ebb12b3670ca6d026244cba79b9  Ukulele/Samples/1-B4.wav
+0a67cd5fabfd6b8facacc19c2e37da41c3cfb6a2  Ukulele/Samples/2-E4.wav
+7d1fae06e5d109dd39f75c123442f54d36361885  Ukulele/Samples/2-A5.wav
+0b8ff8f773bab334fe0166b3566ab0f8c8e35d33  Ukulele/Samples/3-E5.wav
+d0f769f7a15b4c3822b2be88f566ccf8dcf0e43a  Ukulele/Samples/2-A4.wav
+4f0635f57d25b40047f94cee0a2d0857a3f5cb48  Ukulele/Samples/Percussion-3.wav
+f51fceb5d5d0d6b22e48934bff5bdc782a05fd66  Ukulele/Samples/1-Ab5.wav
+64e60911e14f1533d00d94b55c8484a11b3d5419  Ukulele/Samples/3-X.wav
+64e60911e14f1533d00d94b55c8484a11b3d5419  Ukulele/Samples/2-X.wav
+f1738f167e2cd99e7d8d10a60c505d49bd6c2a5d  Ukulele/Samples/2-E5.wav
+d429d6156594c750e9ca2cf76b15eae0ca9743c0  Ukulele/Samples/4-Ab4.wav
+c9f2f841d6dfa5206ad4e14ee33e1c3b9b824792  Ukulele/Samples/2-F5.wav
+707c4ed46ca2a322cae07e4b49a0b8b905f9501d  Ukulele/Samples/2-Ab5.wav
+3bbb57f4683607dee002974fcd5fd7c8b2931888  Ukulele/Samples/2-Bb5.wav
+19b262c10ebbcc75c508d8d4fb72579fdf63c8b9  Ukulele/Samples/1-F5.wav
+8dd3f736fe80c331db0734ae6d25721deedbd5e7  Ukulele/Samples/1-D5.wav
+788ceef95d551150c0a68e5ccbea34f33c1e98b7  Ukulele/Samples/4-Eb5.wav
+47f3e0d4fbd6a2cd3b5b5802042b793cf9d67079  Ukulele/Samples/4-Gb5.wav
+26b60753982bdcd0cf3a1ab0bf66adc3d03f3c6b  Ukulele/Samples/4-G4.wav
+bbce62e2ac9d9c6ef55f8ec4b30cb55d92deca2b  Ukulele/Samples/3-E4.wav
+64e60911e14f1533d00d94b55c8484a11b3d5419  Ukulele/Samples/1-X.wav
+fa239f18e14254d974b3bff61697bfd12dc9eb4a  Ukulele/Samples/1-C5.wav
+30a917ede57c87b58f448fde2b1fab1da96524c8  Ukulele/Samples/3-Ab4.wav
+5241a4ae0dc3c99188f3d2bffc7d09e90042e8ab  Ukulele/string.pd
+c71cd5def07ff8db32594ff110f9a9679af04529  Ukulele/tuner.pd
+d3e6523e3b46d7f39a2dd109555175e5cbca094a  Ukulele/notchord.pd_linux
