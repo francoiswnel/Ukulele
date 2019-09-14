@@ -59,8 +59,14 @@ Main:
 
 ![main.pd](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Screenshots/main.png)
 
+String:
+
 ![string.pd](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Screenshots/string.png)
 
+Percussion:
+
 ![percussion.pd](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Screenshots/percussion.png)
+
+Tuner:
 
 ![tuner.pd](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Screenshots/tuner.png)
