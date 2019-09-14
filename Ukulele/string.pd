@@ -11,8 +11,8 @@
 #X obj 78 172 - 1;
 #X obj 78 200 text get chord;
 #X obj 78 228 makefilename ./Samples/\$1-%s.wav;
-#X obj 328 228 del;
 #X obj 78 144 i \$1;
+#X obj 328 228 del 5;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 12 0;
@@ -23,5 +23,5 @@
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 8 0;
-#X connect 12 0 1 0;
-#X connect 13 0 9 0;
+#X connect 12 0 9 0;
+#X connect 13 0 1 0;
