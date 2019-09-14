@@ -1,6 +1,6 @@
 # Ukulele
 
-TODO: Description
+Ukulele is a sample-based patch for the [Critter & Guitari Organelle](https://www.critterandguitari.com/organelle). You can select a chord with the octave on the left of the keyboard, and then use keys on the right of the keyboard to pick or strum the strings to play the chord. It also includes some percussion, and the ability to tune the strings.
 
            /\_/ \
     []##### O  | )
@@ -10,7 +10,14 @@ TODO: Description
 
 ![Interface](https://raw.githubusercontent.com/francoiswnel/Ukulele/master/Interface.png)
 
-* TODO
+* The keyboard is split into three sections for selecting a chord, playing percussion or muting the strings, and strumming or picking the strings.
+* Select a chord by playing notes on the left of the keyboard. The patch will attempt to determine a chord or chord inversions, and will map these to the fret positions for the chord on a standard ukulele.
+* The display will show the currently determined chord and the mapped notes on the ukulele strings. The patch includes 204 mapped chords, but will show more determined chords than there are mappings. If an unmapped chord is played, the last mapped chord will be used instead, as indicated by the displayed strings.
+* The strumming section has a dedicated key for each string, as well as three strumming options: Down, up, and both down and up.
+* The tempo or speed at which the notes are strummed can be cycled through using the aux button.
+* The percussion section includes three percussion samples and two mute samples. The mute samples will also stop the string samples if they are currently playing.
+* The four knobs can be used to detune the strings up or down a full tone. To reset the tuning, restart the patch.
+* The samples were recorded using a Kala KA-CE concert scale ukulele.
 
 # Download
 
@@ -27,7 +34,7 @@ Installation instructions:
 
 # Discussion
 
-Please leave feedback or ask questions in the [Critter & Guitari forum thread](), or [create an issue]() on GitHub.
+Please leave feedback or ask questions in the [Critter & Guitari forum thread](), or [create an issue](https://github.com/francoiswnel/Ukulele/issues) on GitHub.
 
 # Licensing
 
