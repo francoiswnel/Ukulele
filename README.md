@@ -27,7 +27,7 @@ Ukulele is a sample-based patch for the [Critter & Guitari Organelle](https://ww
 
 Download the latest release:
 
-* [Patchstorage]()
+* [Patchstorage](https://patchstorage.com/ukulele/)
 * [GitHub](https://github.com/francoiswnel/Ukulele/releases/latest)
 
 Installation instructions:
@@ -42,7 +42,7 @@ To build the `notchord` object from source, run `make` in the same directory as 
 
 # Discussion
 
-Please leave feedback or ask questions in the [Critter & Guitari forum thread](), or [create an issue](https://github.com/francoiswnel/Ukulele/issues) on GitHub.
+Please leave feedback or ask questions in the [Critter & Guitari forum thread](https://forum.critterandguitari.com/t/ukulele-sample-based-instrument-patch/4848), or [create an issue](https://github.com/francoiswnel/Ukulele/issues) on GitHub.
 
 # Licensing
 
