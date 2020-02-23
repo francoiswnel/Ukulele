@@ -19,7 +19,13 @@ Ukulele is a sample-based patch for the [Critter & Guitari Organelle](https://ww
 * The four knobs can be used to detune the strings up or down a full tone. To reset the tuning, restart the patch.
 * The samples were recorded using a Kala KA-CE concert scale ukulele.
 
-Watch a [short demo](https://www.youtube.com/watch?v=WafbU_DOtTs) of the features on YouTube.
+# Videos
+
+[![Ukulele for Critter & Guitari Organelle](https://j.gifs.com/q7XJ7r.gif)](https://www.youtube.com/watch?v=WafbU_DOtTs)
+
+[![Critter & Guitari - Deterior with Ukulele + Flute - Part 1](https://j.gifs.com/wV8P0J.gif)](https://www.youtube.com/watch?v=jNkDwAe8q5I)
+
+[![Critter & Guitari - Deterior with Ukulele + Flute - Part 2](https://j.gifs.com/JyjLND.gif)](https://www.youtube.com/watch?v=tZJGKPfkqmE)
 
 # Known Issues
 
